@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* CSS styling goes here */
+    .rating-container {
+      display: inline-block;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent; /* Adjust the size as needed */
+      border-right: 20px solid transparent; /* Adjust the size as needed */
+      border-bottom: 20px solid transparent; /* Adjust the size as needed */
+      display: inline-block;
+    }
+
+    .filled-triangle {
+      border-bottom: 20px solid blue; /* Adjust the color as needed */
+    }
+
+    #rating-text {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="rating-container">
+    <div id="rating-triangles"></div>
+    <p id="rating-text">Rating: <span id="current-rating">0</span></p>
+  </div>
+
+  <script>
+    // JavaScript functionality goes here
+    const ratingContainer = document.querySelector(".rating-container");
+    const ratingTriangles = document.getElementById("rating-triangles");
+    const currentRating = document.getElementById("current-rating");
+
+    // Define the number of parts (triangles) in the rating scale
+    const totalParts = 5; // You can change this to 'x'
+
+    // Generate the rating scale
+    for (let i = 1; i <= totalParts; i++) {
+      const triangle = document.createElement("div");
+      triangle.classList.add("triangle");
+      triangle.dataset.rating = i;
+      ratingTriangles.appendChild(triangle);
+
+      triangle.addEventListener("mouseover", () => {
+        currentRating.textContent = triangle.dataset.rating;
+        resetTriangles();
+        fillTriangles(triangle.dataset.rating);
+      });
+
+      triangle.addEventListener("mouseout", () => {
+        resetTriangles();
+        fillTriangles(currentRating.textContent);
+      });
+    }
+
+    function resetTriangles() {
+      const triangles = document.querySelectorAll(".triangle");
+      triangles.forEach((triangle) => {
+        triangle.classList.remove("filled-triangle");
+      });
+    }
+
+    function fillTriangles(rating) {
+      const triangles = document.querySelectorAll(".triangle");
+      for (let i = 0; i < rating; i++) {
+        triangles[i].classList.add("filled-triangle");
+      }
+    }
+  </script>
+</body>
+</html>
