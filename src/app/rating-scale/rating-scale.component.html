@@ -1,0 +1,7 @@
+<div class="rating-scale">
+  <app-rating-item *ngFor="let rating of ratings; let i = index"
+                  [rating]="i + 1"
+                  [selected]="i + 1 === selectedRating"
+                  (ratingSelected)="onRatingSelected($event)">
+  </app-rating-item>
+</div>

@@ -1,0 +1,32 @@
+.rating-scale {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 104px solid #ccc;
+}
+
+.rating-point {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 60px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.rating-point.selected {
+  background-color: #f39c12;
+  color: #fff;
+}
+
+.rating-point:hover {
+  background-color: #3498db;
+  color: #fff;
+}

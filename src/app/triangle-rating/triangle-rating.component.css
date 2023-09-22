@@ -1,0 +1,15 @@
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86.6px solid #ccc; /* Empty rating color */
+}
+
+.triangle-part {
+  height: 100%;
+  float: left;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86.6px solid #FFD700; /* Filled rating color */
+}

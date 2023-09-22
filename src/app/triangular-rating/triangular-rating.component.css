@@ -1,0 +1,24 @@
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 346px solid #eee; /* Adjust the height as needed */
+  position: relative;
+}
+
+.rating {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.rating.selected {
+  background-color: #007bff; /* Change this color for selected rating */
+  color: #fff;
+}
