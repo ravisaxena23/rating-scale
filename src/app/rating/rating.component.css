@@ -3,19 +3,23 @@
 .rating {
   width: 300px; /* Set the width of the rectangle as needed */
   height: 50px; /* Set the height of the rectangle as needed */
-  border: 1px solid #ccc; /* Rectangle border */
   position: relative;
   cursor: pointer;
 }
 
-.rectangle {
+.rectangle {  
+  position: absolute;
   width: 0;
   height: 100%;
-  background-color: #f5a623; /* Default background color */
-  transition: width 0.3s ease; /* Smooth animation on rating change */
-  position: absolute;
+  border-left: 100px solid transparent; /* Adjust the width of the triangle */
+  border-top: 100px solid transparent; /* Adjust the color and height of the triangle */
+  /* border-bottom: 50px solid black; */
 }
 
+.triangle-linear-border{
+  padding: 0;
+  margin: 0;
+}
 .triangle-custom {
   /* width: 0;
   height: 100%;
@@ -28,7 +32,41 @@
   border-right: 50px solid transparent;
   border-bottom: 100px solid white;
   transform: rotate(-11deg); */
-  width: 308px;
+  width: 300px;
   height: 50px;
   background: linear-gradient(to bottom right, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+}
+
+
+.rhs-triangle{
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent; /* Adjust the width of the triangle */
+  border-top: 100px solid transparent; /* Adjust the color and height of the triangle */
+  border-bottom: 50px solid black;
+  position: absolute;
+}
+
+
+.scales-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1px;
+  width: 300px;
+  background-color: black;
+  margin-top: 0px ;
+  position: absolute;
+  z-index: 1;
+}
+
+.scale {
+  background-color: black;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+}
+
+.scale:hover {
+  cursor: pointer;
 }

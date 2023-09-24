@@ -1,5 +1,16 @@
 <div class="rating" (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave()" (click)="onRatingClick()">
-  <div class="rectangle">
-    <div class="triangle-custom"></div>
+  <div class="outer-rectangle">
+    <div class="triangle-custom">
+      <div class="rating" (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave()" (click)="onRatingClick()">
+        <div class="rectangle">
+          <div class="triangle-custom">
+          </div>
+        </div>
+        
+      </div>
+    </div>
   </div>
+</div>
+<div class="scales-wrapper">
+  <div *ngFor="let rating of [0,1,2,3,4,5]" class="scale" (click)="onClick(rating)"></div>
 </div>
